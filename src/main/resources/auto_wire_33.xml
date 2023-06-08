@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--使用bean标签的autowire属性
+    1.byName 根据属性的名称自动装配 属性的名称与beanId的名称必须一致
+    2.byType 根据属性的类型自动装配：包名.类名 完全一致
+    -->
+    <bean id="empEntity" class="com.mayikt.entity.EmpEntity" autowire="byName"/>
+    <bean id="deptEntity" class="com.mayikt.entity.DeptEntity">
+        <property name="name" value="教育部"/>
+    </bean>
+</beans>

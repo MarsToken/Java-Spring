@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- memberService注入到ioc容器中-->
+    <bean id="memberService" class="com.mayikt.service.MemberService">
+        <!--
+         name="memberDao"   MemberService类中属性的名称
+         ref  memberDao 在ioc容器中注入的beanid
+        -->
+        <property name="memberDao" ref="memberDao"></property>
+        <!--也可以这样实现
+        <property name="memberDao">
+            <bean id="memberDao" class="com.mayikt.dao.MemberDaoImpl"></bean>
+        </property>
+        -->
+    </bean>
+    <!-- MemberDaoImp注入到ioc容器中-->
+    <bean id="memberDao" class="com.mayikt.dao.MemberDaoImpl"></bean>
+</beans>

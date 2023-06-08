@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--级联赋值的形式 -->
+    <bean id="empEntity" class="com.mayikt.entity.EmpEntity">
+        <!--两个属性 -->
+        <property name="name" value="mayikt"></property>
+        <property name="addres" value="湖北省武汉市"></property>
+        <!--级联赋值的形式 -->
+        <property name="deptEntity" ref="deptEntity"></property>
+        <!--deptEntity必须有get方法-->
+        <property name="deptEntity.name" value="IT部门"></property>
+    </bean>
+    <!--注入部门对象 -->
+    <bean id="deptEntity" class="com.mayikt.entity.DeptEntity">
+    </bean>
+</beans>

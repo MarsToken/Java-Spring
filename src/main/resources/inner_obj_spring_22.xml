@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--注入内部bean对象 -->
+    <bean id="empEntity" class="com.mayikt.entity.EmpEntity">
+        <!--两个属性 -->
+        <property name="name" value="mayikt"></property>
+        <property name="addres" value="湖北省武汉市"></property>
+        <!--注入内部bean对象 -->
+        <property name="deptEntity">
+            <bean id="deptEntity" class="com.mayikt.entity.DeptEntity">
+                <property name="name" value="教育部门"></property>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

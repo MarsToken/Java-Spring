@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="stuEntity" class="com.mayikt.entity.StuEntity">
+        <!--对我们的list属性赋值 -->
+        <property name="list">
+            <list>
+                <value>list01</value>
+                <value>list02</value>
+            </list>
+        </property>
+        <!--对我们的arrays属性赋值 -->
+        <property name="arrays">
+            <array>
+                <value>mayikt01</value>
+                <value>mayikt02</value>
+            </array>
+        </property>
+        <!--对我们的map属性赋值 -->
+        <property name="map">
+            <map>
+                <entry key="mayikt" value="余胜军"></entry>
+                <entry key="xiaowei" value="小薇"></entry>
+            </map>
+        </property>
+        <!--对我们的set属性赋值 -->
+        <property name="set">
+            <set>
+                <value>list01</value>
+                <value>list02</value>
+            </set>
+        </property>
+        <!--注入list类型为对象类型 ref bean 引入对象即可 -->
+        <property name="courses">
+            <list>
+                <ref bean="courseEntity_java"></ref>
+                <ref bean="courseEntity_dashuju"></ref>
+            </list>
+
+        </property>
+    </bean>
+    <!--java课程 -->
+    <bean id="courseEntity_java" class="com.mayikt.entity.CourseEntity">
+        <property name="name" value="mayikt-java"></property>
+    </bean>
+    <!--dashuju课程 -->
+    <bean id="courseEntity_dashuju" class="com.mayikt.entity.CourseEntity">
+        <property name="name" value="mayikt-大数据"></property>
+    </bean>
+</beans>
